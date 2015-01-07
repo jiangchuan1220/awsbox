@@ -15,4 +15,4 @@ app.get ('/', function (req, res){
     res.render('index.html',{name:my_name,power:my_power});    
     });
 app.use(express.static(__dirname + '/public'));
-server.listen (8888);
+server.listen(process.env['PORT'] || 8080, '127.0.0.1');
