@@ -5,7 +5,10 @@
   "dependencies": {
   },
   "devDependencies": {
-    "awsbox": "~0.7.0"
+    "awsbox": "~0.7.0",
+    "express": "~3.4.8",
+    "ejs": ">= 0.0.1",
+    "body-parser": "~1.0.0"
   },
   "repository" : {
     "type" : "git",

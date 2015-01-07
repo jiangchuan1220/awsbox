@@ -1,14 +1,18 @@
-var http = require('http');
-var fs = require('fs');
+var express = require ('express');
+var fs = require ('fs');
+var app = express ();
+var bodyParser = require ('body-parser');
+app.use (bodyParser ());
+var server = require ('http').createServer (app);
+app.set('views', __dirname + '/views');
+app.engine('.html', require('ejs').__express);
 
+var my_name="Goku";
+var my_power=9001;
 
-fs.readFile('/home/app/code/server.html', function (err, html) {
-    if (err) {
-        throw err; 
-    }       
-    http.createServer(function(request, response) {  
-        response.writeHeader(200, {"Content-Type": "text/html"});  
-        response.write(html);  
-        response.end();  
-    }).listen(process.env['PORT'] || 8080, '127.0.0.1');
-});
+app.get ('/', function (req, res){
+    console.log ('GET /');
+    res.render('index.html',{name:my_name,power:my_power});    
+    });
+app.use(express.static(__dirname + '/public'));
+server.listen (8888);
