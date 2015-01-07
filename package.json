@@ -1,0 +1,14 @@
+{
+  "name": "cloud89",
+  "description": "A cloud89 sample",
+  "version": "0.0.1",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "awsbox": "~0.7.0"
+  },
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/jiangchuan1220/awsbox"
+  }
+}
